@@ -96,23 +96,25 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             {navItems.map((item) => (
-              <div key={item.label} className="group relative">
+              <div key={item.label} className="group relative pb-2">
                 <Link
                   href={item.href}
                   className="inline-flex items-center gap-2 border border-transparent px-3 py-1.5 text-sm font-semibold text-slate-200 transition hover:border-retro-borderLight hover:bg-slate-900/70 hover:text-white"
                 >
                   {item.label}
                 </Link>
-                <div className="pointer-events-none absolute left-0 top-full mt-2 min-w-44 translate-y-1 border border-retro-borderLight bg-slate-950/96 p-2 opacity-0 shadow-window transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.label}
-                      href={child.href}
-                      className="block px-2 py-1.5 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-retro-accent"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                <div className="pointer-events-none absolute left-0 top-full z-50 min-w-44 pt-1 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                  <div className="translate-y-1 border border-retro-borderLight bg-slate-950/96 p-2 shadow-window transition duration-150 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        className="block px-2 py-1.5 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-retro-accent"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
