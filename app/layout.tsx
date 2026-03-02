@@ -21,10 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="relative min-h-screen antialiased">
-        <div aria-hidden className="pointer-events-none absolute inset-0 z-0 bg-slate-950/58" />
+      <body className="min-h-screen antialiased">
         <LanguageProvider>
-          <div className="relative z-10 flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-16 pt-24 md:pt-28">{children}</main>
             <Footer />
