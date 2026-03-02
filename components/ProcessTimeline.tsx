@@ -7,18 +7,18 @@ export default function ProcessTimeline() {
   const { t } = useLanguage();
 
   return (
-    <section className="mt-8">
+    <section id="workflow" className="mt-8 scroll-mt-24">
       <SectionShell title="workflow.log">
-        <h2 className="font-mono text-2xl text-slate-100">{t.process.title}</h2>
+        <h2 className="text-2xl font-bold text-slate-100">{t.process.title}</h2>
         <p className="mt-2 text-slate-300">{t.process.intro}</p>
         <ol className="mt-6 space-y-4">
           {t.process.steps.map((step, index) => (
             <li key={step.title} className="flex gap-4 border-l border-retro-borderLight pl-4">
-              <span className="mt-0.5 h-6 w-6 shrink-0 border border-retro-borderLight bg-slate-900 text-center font-mono text-xs leading-6 text-retro-accent">
+              <span className="mt-0.5 h-6 w-6 shrink-0 border border-retro-borderLight bg-slate-900 text-center text-xs font-bold leading-6 text-retro-accent">
                 {index + 1}
               </span>
               <div>
-                <h3 className="font-mono text-base text-slate-100">{step.title}</h3>
+                <h3 className="text-base font-semibold text-slate-100">{step.title}</h3>
                 <p className="text-sm text-slate-300">{step.description}</p>
               </div>
             </li>

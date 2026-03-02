@@ -11,15 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         retro: {
-          panel: '#141d2f',
-          borderLight: '#6b85ab',
-          borderDark: '#0a1324',
-          accent: '#6fa4cf',
-          mint: '#7ab9a9'
+          panel: '#161b22',
+          borderLight: '#30363d',
+          borderDark: '#21262d',
+          accent: '#58a6ff',
+          mint: '#7ee787'
         }
       },
       boxShadow: {
-        window: '2px 2px 0 #0a1324, -1px -1px 0 #6b85ab'
+        window: '0 8px 24px rgba(1, 4, 9, 0.55)'
       }
     }
   },
