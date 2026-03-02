@@ -28,7 +28,7 @@ body {
   color: var(--gh-fg-default);
   background-color: var(--gh-canvas-default);
   background-image: var(--landing-scroll-bg-url);
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: auto var(--landing-scroll-bg-height);
