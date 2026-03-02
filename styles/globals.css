@@ -4,14 +4,37 @@
 
 :root {
   color-scheme: dark;
+  --gh-canvas-default: #0d1117;
+  --gh-canvas-subtle: #161b22;
+  --gh-border-default: #30363d;
+  --gh-fg-default: #e6edf3;
+  --gh-fg-muted: #8b949e;
+  --gh-accent: #58a6ff;
 }
 
 body {
-  background-image: repeating-linear-gradient(
-    180deg,
-    rgba(111, 164, 207, 0.02),
-    rgba(111, 164, 207, 0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Noto Sans',
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+  color: var(--gh-fg-default);
+  background:
+    radial-gradient(circle at 20% -15%, rgba(88, 166, 255, 0.08), transparent 38%),
+    radial-gradient(circle at 85% 0%, rgba(126, 231, 135, 0.06), transparent 32%),
+    var(--gh-canvas-default);
+}
+
+::selection {
+  color: #0d1117;
+  background: #58a6ff;
+}
+
+html {
+  scroll-behavior: smooth;
 }

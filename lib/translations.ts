@@ -97,7 +97,7 @@ export const translations: Record<Language, TranslationShape> = {
     hero: {
       title: 'Soluciones de datos y software, sin humo.',
       subtitle:
-        '{{COMPANY_NAME}} acompaña a pymes que no tienen equipos técnicos grandes, pero sí presupuesto y necesidad de mejorar procesos con alguien que entienda negocio y tecnología.',
+        'Arc Solutions acompaña a pymes que no tienen equipos técnicos grandes, pero sí presupuesto y necesidad de mejorar procesos con alguien que entienda negocio y tecnología.',
       ctaPrimary: 'Agendar una conversación',
       ctaSecondary: 'Ver portafolio'
     },
@@ -185,14 +185,14 @@ export const translations: Record<Language, TranslationShape> = {
       ]
     },
     about: {
-      title: 'Sobre {{COMPANY_NAME}}',
+      title: 'Sobre Arc Solutions',
       intro: 'Este estudio está formado actualmente por una sola persona.',
       paragraphs: [
         'Con cerca de 4 años construyendo soluciones tecnológicas, el foco principal está en proyectos donde los datos son parte crítica del negocio.',
         'El rol es híbrido: ingeniería de datos para mover y transformar información, arquitectura de soluciones para elegir herramientas adecuadas y entendimiento de negocio para conectar problemas reales con opciones técnicas viables.',
         'También hay experiencia trabajando con datos sensibles, aplicando prácticas básicas de seguridad y gobernanza para cuidar acceso, trazabilidad y calidad de la información.'
       ],
-      closing: 'Si los clientes crecen gracias a estas soluciones, {{COMPANY_NAME}} crece con ellos.'
+      closing: 'Si los clientes crecen gracias a estas soluciones, Arc Solutions crece con ellos.'
     },
     portfolio: {
       title: 'Portafolio',
@@ -242,7 +242,7 @@ export const translations: Record<Language, TranslationShape> = {
       }
     },
     common: {
-      companyName: '{{COMPANY_NAME}}',
+      companyName: 'Arc Solutions',
       ctaContact: 'Agendar una conversación',
       footerTransparency: 'Trabajo transparente, datos bajo tu control y decisiones técnicas con contexto de negocio.',
       rights: 'Todos los derechos reservados.'
@@ -259,7 +259,7 @@ export const translations: Record<Language, TranslationShape> = {
     hero: {
       title: 'Data and software solutions, no fluff.',
       subtitle:
-        '{{COMPANY_NAME}} partners with SMBs that do not have large tech teams, but do have budget and a real need to improve processes with someone who understands both business and technology.',
+        'Arc Solutions partners with SMBs that do not have large tech teams, but do have budget and a real need to improve processes with someone who understands both business and technology.',
       ctaPrimary: 'Schedule a call',
       ctaSecondary: 'View portfolio'
     },
@@ -347,14 +347,14 @@ export const translations: Record<Language, TranslationShape> = {
       ]
     },
     about: {
-      title: 'About {{COMPANY_NAME}}',
+      title: 'About Arc Solutions',
       intro: 'This studio is currently run by one person.',
       paragraphs: [
         'With around 4 years building technology solutions, the main focus is projects where data is a critical part of the business.',
         'The role is hybrid: data engineering to move and transform information, solution architecture to choose the right tools, and business understanding to connect real-world problems with practical technical options.',
         'There is also experience handling sensitive data and applying basic security and governance practices for access control, traceability, and information quality.'
       ],
-      closing: 'If clients grow thanks to these solutions, {{COMPANY_NAME}} grows with them.'
+      closing: 'If clients grow thanks to these solutions, Arc Solutions grows with them.'
     },
     portfolio: {
       title: 'Portfolio',
@@ -404,7 +404,7 @@ export const translations: Record<Language, TranslationShape> = {
       }
     },
     common: {
-      companyName: '{{COMPANY_NAME}}',
+      companyName: 'Arc Solutions',
       ctaContact: 'Schedule a call',
       footerTransparency: 'Transparent work, your data under your control, and technical decisions grounded in business context.',
       rights: 'All rights reserved.'

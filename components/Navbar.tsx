@@ -3,34 +3,152 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
+import ArcLogo from '@/components/ArcLogo';
+
+type NavItem = {
+  label: string;
+  href: string;
+  children: Array<{ label: string; href: string }>;
+};
 
 export default function Navbar() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+
+  const navItems: NavItem[] =
+    language === 'es'
+      ? [
+          {
+            label: t.nav.home,
+            href: '/',
+            children: [
+              { label: 'Hero', href: '/#top' },
+              { label: 'Tecnologias', href: '/#tech-stack' }
+            ]
+          },
+          {
+            label: t.nav.about,
+            href: '/about',
+            children: [
+              { label: 'Perfil', href: '/about' },
+              { label: 'Forma de trabajo', href: '/#workflow' }
+            ]
+          },
+          {
+            label: t.nav.services,
+            href: '/#services',
+            children: [
+              { label: 'Servicios', href: '/#services' },
+              { label: 'Proceso', href: '/#workflow' }
+            ]
+          },
+          {
+            label: t.nav.portfolio,
+            href: '/portfolio',
+            children: [
+              { label: 'Casos', href: '/portfolio' },
+              { label: 'Tecnologias', href: '/#tech-stack' }
+            ]
+          }
+        ]
+      : [
+          {
+            label: t.nav.home,
+            href: '/',
+            children: [
+              { label: 'Hero', href: '/#top' },
+              { label: 'Technologies', href: '/#tech-stack' }
+            ]
+          },
+          {
+            label: t.nav.about,
+            href: '/about',
+            children: [
+              { label: 'Profile', href: '/about' },
+              { label: 'How I work', href: '/#workflow' }
+            ]
+          },
+          {
+            label: t.nav.services,
+            href: '/#services',
+            children: [
+              { label: 'Services', href: '/#services' },
+              { label: 'Process', href: '/#workflow' }
+            ]
+          },
+          {
+            label: t.nav.portfolio,
+            href: '/portfolio',
+            children: [
+              { label: 'Case studies', href: '/portfolio' },
+              { label: 'Technologies', href: '/#tech-stack' }
+            ]
+          }
+        ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3" aria-label="Main navigation">
-        <Link href="/" className="font-mono text-sm uppercase tracking-widest text-retro-mint">
-          {t.common.companyName}
-        </Link>
-        <div className="hidden items-center gap-5 text-sm text-slate-200 md:flex">
-          <Link className="hover:text-retro-accent" href="/">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-retro-borderLight/70 bg-slate-950/55 backdrop-blur-xl">
+      <nav className="mx-auto max-w-6xl px-4 py-3" aria-label="Main navigation">
+        <div className="flex items-center justify-between gap-4">
+          <Link href="/" className="inline-flex items-center gap-3">
+            <ArcLogo compact />
+            <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-slate-300 sm:inline">Arc Solutions</span>
+          </Link>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            {navItems.map((item) => (
+              <div key={item.label} className="group relative">
+                <Link
+                  href={item.href}
+                  className="inline-flex items-center gap-2 border border-transparent px-3 py-1.5 text-sm font-semibold text-slate-200 transition hover:border-retro-borderLight hover:bg-slate-900/70 hover:text-white"
+                >
+                  {item.label}
+                </Link>
+                <div className="pointer-events-none absolute left-0 top-full mt-2 min-w-44 translate-y-1 border border-retro-borderLight bg-slate-950/96 p-2 opacity-0 shadow-window transition duration-150 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.label}
+                      href={child.href}
+                      className="block px-2 py-1.5 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-retro-accent"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <Link
+              href="/contact"
+              className="border border-retro-accent bg-retro-accent px-3 py-1.5 text-sm font-semibold text-slate-950 transition hover:bg-blue-400"
+            >
+              {t.nav.contact}
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <Link
+              href="/contact"
+              className="border border-retro-accent px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-retro-accent transition hover:bg-retro-accent hover:text-slate-950 lg:hidden"
+            >
+              {t.nav.contact}
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+          <Link href="/" className="whitespace-nowrap border border-retro-borderLight bg-slate-900/70 px-3 py-1.5 text-xs font-semibold text-slate-200">
             {t.nav.home}
           </Link>
-          <Link className="hover:text-retro-accent" href="/about">
+          <Link href="/about" className="whitespace-nowrap border border-retro-borderLight bg-slate-900/70 px-3 py-1.5 text-xs font-semibold text-slate-200">
             {t.nav.about}
           </Link>
-          <a className="hover:text-retro-accent" href="/#services">
+          <a href="/#services" className="whitespace-nowrap border border-retro-borderLight bg-slate-900/70 px-3 py-1.5 text-xs font-semibold text-slate-200">
             {t.nav.services}
           </a>
-          <Link className="hover:text-retro-accent" href="/portfolio">
+          <Link href="/portfolio" className="whitespace-nowrap border border-retro-borderLight bg-slate-900/70 px-3 py-1.5 text-xs font-semibold text-slate-200">
             {t.nav.portfolio}
           </Link>
-          <Link className="hover:text-retro-accent" href="/contact">
-            {t.nav.contact}
-          </Link>
         </div>
-        <LanguageToggle />
       </nav>
     </header>
   );

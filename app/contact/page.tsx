@@ -11,7 +11,7 @@ export default function ContactPage() {
     <section className="mt-6">
       <SectionShell title="contact.new">
         <div className="space-y-5">
-          <h1 className="font-mono text-3xl text-slate-100">{t.contact.title}</h1>
+          <h1 className="text-3xl font-bold text-slate-100">{t.contact.title}</h1>
           <p className="max-w-3xl text-slate-300">{t.contact.intro}</p>
           <ContactForm />
         </div>
