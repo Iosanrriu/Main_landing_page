@@ -15,26 +15,26 @@ export default function TechStackStrip() {
 
   return (
     <section id="tech-stack" className="mt-8 scroll-mt-24">
-      <div className="border border-retro-borderLight bg-retro-panel/80 p-4 shadow-window">
+      <div className="rounded-[28px] border border-retro-borderLight bg-white p-6 shadow-window">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
           {language === 'es' ? 'Tecnologias con las que trabajo' : 'Technologies I work with'}
         </p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {stack.map((item) => (
-            <article key={item.name} className="border border-retro-borderLight bg-slate-950/70 px-3 py-3">
+            <article key={item.name} className="rounded-2xl border border-retro-borderDark bg-[#fafafc] px-3 py-3">
               <div className="flex items-center gap-2">
                 {item.image ? (
                   <img
                     src={item.image}
                     alt=""
                     aria-hidden="true"
-                    className={`h-5 w-5 shrink-0 object-contain ${item.invert ? 'invert' : ''}`}
+                    className={`h-5 w-5 shrink-0 object-contain ${item.invert ? '' : ''}`}
                     loading="lazy"
                   />
                 ) : (
-                  <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full bg-slate-500" />
+                  <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full bg-slate-400" />
                 )}
-                <span className="text-sm font-semibold text-slate-100">{item.name}</span>
+                <span className="text-sm font-semibold text-slate-800">{item.name}</span>
               </div>
             </article>
           ))}

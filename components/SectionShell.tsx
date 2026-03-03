@@ -8,15 +8,14 @@ type SectionShellProps = {
 
 export default function SectionShell({ title, children, className = '' }: SectionShellProps) {
   return (
-    <section className={`relative overflow-hidden border border-retro-borderLight/80 bg-retro-panel/90 shadow-window ${className}`}>
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(88,166,255,0.08),transparent_36%)]" />
-      <div className="relative border-b border-retro-borderLight/70 bg-slate-950/70 px-4 py-2.5">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-          <span className="h-2.5 w-2.5 bg-retro-accent" aria-hidden="true" />
+    <section className={`relative overflow-hidden rounded-[28px] border border-retro-borderLight bg-retro-panel shadow-window ${className}`}>
+      <div className="relative border-b border-retro-borderDark bg-white/85 px-5 py-3">
+        <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+          <span className="h-2.5 w-2.5 rounded-full bg-retro-accent" aria-hidden="true" />
           {title}
         </div>
       </div>
-      <div className="relative p-5 md:p-6">{children}</div>
+      <div className="relative p-6 md:p-8">{children}</div>
     </section>
   );
 }

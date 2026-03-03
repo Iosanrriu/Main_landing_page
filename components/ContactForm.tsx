@@ -74,12 +74,12 @@ export default function ContactForm() {
   };
 
   const inputStyles =
-    'w-full border border-retro-borderLight bg-slate-950/85 px-3 py-2 text-sm text-slate-100 focus:border-retro-accent focus:outline-none';
+    'w-full rounded-xl border border-retro-borderLight bg-white px-3 py-2 text-sm text-slate-800 focus:border-retro-accent focus:outline-none';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-200" htmlFor="name">
+        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="name">
           {t.contact.form.name} *
         </label>
         <input
@@ -92,7 +92,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-200" htmlFor="email">
+        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="email">
           {t.contact.form.email} *
         </label>
         <input
@@ -106,7 +106,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-200" htmlFor="company">
+        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="company">
           {t.contact.form.company}
         </label>
         <input
@@ -118,7 +118,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-200" htmlFor="projectType">
+        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="projectType">
           {t.contact.form.projectType}
         </label>
         <select
@@ -136,7 +136,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-200" htmlFor="message">
+        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="message">
           {t.contact.form.message} *
         </label>
         <textarea
@@ -149,15 +149,15 @@ export default function ContactForm() {
         />
       </div>
 
-      {validationError ? <p className="text-sm text-rose-300">{validationError}</p> : null}
-      {status === 'success' ? <p className="text-sm text-emerald-300">{t.contact.form.success}</p> : null}
-      {status === 'error' ? <p className="text-sm text-rose-300">{t.contact.form.error}</p> : null}
+      {validationError ? <p className="text-sm text-rose-500">{validationError}</p> : null}
+      {status === 'success' ? <p className="text-sm text-emerald-600">{t.contact.form.success}</p> : null}
+      {status === 'error' ? <p className="text-sm text-rose-500">{t.contact.form.error}</p> : null}
 
       <button
         type="submit"
         aria-label={t.contact.form.submit}
         disabled={loading}
-        className="border border-retro-accent bg-retro-accent px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-70"
+        className="rounded-full border border-retro-accent bg-retro-accent px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? '...' : t.contact.form.submit}
       </button>
