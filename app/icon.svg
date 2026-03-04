@@ -1,6 +1,10 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" fill="#14161B" />
-  <path d="M6 56L22 16H31L16 56H6Z" fill="#C5C5C5" />
-  <rect x="32" y="8" width="8" height="48" fill="#C5C5C5" />
-  <path d="M32 28H48V12H56V32H48L56 56H47L40 36V56H32V28Z" fill="#C5C5C5" />
+  <g fill="#C5C5C5">
+    <path d="M0 64L24 21H36L12 64H0Z" />
+    <path d="M18 45L24 34H30V45H18Z" />
+    <rect x="31" y="0" width="7" height="64" />
+    <path d="M31 22H45V0H52V28H45L53 64H45L38 35V64H31V22Z" />
+    <path d="M45 0H64V8H53V56H64V64H45V0Z" />
+  </g>
 </svg>

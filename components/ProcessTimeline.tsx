@@ -9,8 +9,8 @@ export default function ProcessTimeline() {
   return (
     <section id="workflow" className="mt-8 scroll-mt-24">
       <SectionShell title="workflow">
-        <h2 className="text-3xl font-semibold text-slate-900">{t.process.title}</h2>
-        <p className="mt-2 text-slate-600">{t.process.intro}</p>
+        <h2 className="title-section">{t.process.title}</h2>
+        <p className="subtitle-section mt-2">{t.process.intro}</p>
         <ol className="mt-6 space-y-4">
           {t.process.steps.map((step, index) => (
             <li key={step.title} className="flex gap-4 border-l border-retro-borderLight pl-4">
@@ -18,8 +18,8 @@ export default function ProcessTimeline() {
                 {index + 1}
               </span>
               <div>
-                <h3 className="text-base font-semibold text-slate-900">{step.title}</h3>
-                <p className="text-sm text-slate-600">{step.description}</p>
+                <h3 className="text-base font-semibold tracking-[-0.015em] text-slate-900 md:text-lg">{step.title}</h3>
+                <p className="text-body">{step.description}</p>
               </div>
             </li>
           ))}

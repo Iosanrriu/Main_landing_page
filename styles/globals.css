@@ -4,6 +4,9 @@
 
 :root {
   color-scheme: light;
+  --font-body: var(--font-plex-sans);
+  --font-display: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
   --gh-canvas-default: #f5f5f7;
   --gh-canvas-subtle: #ffffff;
   --gh-border-default: #d2d2d7;
@@ -14,19 +17,26 @@
 
 body {
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
+    var(--font-body),
     'Segoe UI',
     'Noto Sans',
-    Helvetica,
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji';
+    sans-serif;
   color: var(--gh-fg-default);
+  line-height: 1.55;
+  letter-spacing: 0.005em;
   background:
     radial-gradient(circle at 50% -20%, rgba(0, 113, 227, 0.14), rgba(0, 113, 227, 0) 42%),
     linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 55%, #f2f2f4 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family:
+    var(--font-display),
+    'Segoe UI',
+    sans-serif;
+  letter-spacing: -0.015em;
 }
 
 ::selection {
@@ -36,4 +46,55 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+@layer components {
+  .title-hero {
+    @apply text-4xl font-semibold leading-tight text-slate-900 md:text-6xl;
+    letter-spacing: -0.03em;
+  }
+
+  .title-section {
+    @apply text-2xl font-semibold text-slate-900 md:text-3xl;
+    letter-spacing: -0.02em;
+  }
+
+  .title-card {
+    @apply text-lg font-semibold text-slate-900 md:text-xl;
+    letter-spacing: -0.015em;
+  }
+
+  .subtitle-hero {
+    @apply text-base leading-relaxed text-slate-600 md:text-lg;
+    max-width: 76ch;
+  }
+
+  .subtitle-section {
+    @apply text-base leading-relaxed text-slate-600;
+    max-width: 74ch;
+  }
+
+  .text-body {
+    @apply text-[15px] leading-relaxed text-slate-600 md:text-base;
+  }
+
+  .meta-label {
+    @apply text-[11px] font-semibold uppercase;
+    font-family:
+      var(--font-mono),
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      'Liberation Mono',
+      'Courier New',
+      monospace;
+    letter-spacing: 0.14em;
+  }
+
+  .nav-text {
+    @apply text-sm font-medium text-slate-700;
+    letter-spacing: 0.01em;
+  }
 }

@@ -52,7 +52,7 @@ function ProjectVisual({ kind }: { kind: ProjectKind }) {
 }
 
 export default function HomePage() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const kinds: ProjectKind[] = ['migration', 'web', 'api'];
 
   return (
@@ -66,33 +66,33 @@ export default function HomePage() {
       <section id="about" className="mt-8 scroll-mt-24">
         <SectionShell title="about">
           <div className="space-y-4">
-            <h2 className="text-3xl font-semibold text-slate-900">{t.about.title}</h2>
-            <p className="text-slate-600">{t.about.intro}</p>
+            <h2 className="title-section">{t.about.title}</h2>
+            <p className="subtitle-section">{t.about.intro}</p>
             {t.about.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-slate-600">
+              <p key={paragraph} className="text-body">
                 {paragraph}
               </p>
             ))}
-            <p className="font-semibold text-slate-900">{t.about.closing}</p>
+            <p className="text-base font-semibold text-slate-900 md:text-lg">{t.about.closing}</p>
           </div>
         </SectionShell>
       </section>
 
       <section id="portfolio" className="mt-8 scroll-mt-24">
         <SectionShell title="portfolio">
-          <h2 className="text-3xl font-semibold text-slate-900">{t.portfolio.title}</h2>
-          <p className="mt-2 text-slate-600">{t.portfolio.note}</p>
+          <h2 className="title-section">{t.portfolio.title}</h2>
+          <p className="subtitle-section mt-2">{t.portfolio.note}</p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {t.portfolio.projects.map((project, index) => (
               <article key={project.title} className="rounded-2xl border border-retro-borderDark bg-[#fafafc] p-5 transition hover:shadow-md">
                 <ProjectVisual kind={kinds[index] ?? 'api'} />
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-retro-accent">{project.status}</p>
-                <h3 className="text-lg font-semibold text-slate-900">{project.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{project.description}</p>
+                <p className="meta-label mb-2 text-retro-accent">{project.status}</p>
+                <h3 className="title-card">{project.title}</h3>
+                <p className="text-body mt-2">{project.description}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-retro-borderLight bg-white px-2.5 py-1 text-xs font-semibold text-slate-700">
+                    <span key={tag} className="meta-label rounded-full border border-retro-borderLight bg-white px-2.5 py-1 text-slate-700">
                       {tag}
                     </span>
                   ))}
@@ -106,29 +106,9 @@ export default function HomePage() {
       <section id="contact" className="mt-8 scroll-mt-24">
         <SectionShell title="contact">
           <div className="space-y-5">
-            <h2 className="text-3xl font-semibold text-slate-900">{t.contact.title}</h2>
-            <p className="max-w-3xl text-slate-600">{t.contact.intro}</p>
+            <h2 className="title-section">{t.contact.title}</h2>
+            <p className="subtitle-section">{t.contact.intro}</p>
             <ContactForm />
-          </div>
-        </SectionShell>
-      </section>
-
-      <section className="mt-8">
-        <SectionShell title="next step">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-slate-900">
-                {language === 'es' ? 'Hablamos de tu proyecto?' : 'Shall we talk about your project?'}
-              </h2>
-              <p className="text-slate-600">
-                {language === 'es'
-                  ? 'Una conversacion corta para entender el contexto y proponer un camino realista.'
-                  : 'A short conversation to understand your context and propose a realistic path.'}
-              </p>
-            </div>
-            <a href="#contact" aria-label={t.common.ctaContact} className="rounded-full bg-retro-accent px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110">
-              {t.common.ctaContact}
-            </a>
           </div>
         </SectionShell>
       </section>
