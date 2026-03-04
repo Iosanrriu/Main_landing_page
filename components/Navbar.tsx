@@ -13,20 +13,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-4">
           <a href="#top" className="inline-flex items-center gap-3">
             <ArcLogo compact />
-            <span className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 sm:inline">Arc Solutions</span>
+            <span className="meta-label hidden text-slate-700 sm:inline">Arc Solutions</span>
           </a>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <a href="#top" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <a href="#top" className="nav-text rounded-full px-3 py-1.5 transition hover:bg-slate-100">
               {t.nav.home}
             </a>
-            <a href="#services" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <a href="#services" className="nav-text rounded-full px-3 py-1.5 transition hover:bg-slate-100">
               {t.nav.services}
             </a>
-            <a href="#workflow" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <a href="#workflow" className="nav-text rounded-full px-3 py-1.5 transition hover:bg-slate-100">
               {t.nav.about}
             </a>
-            <a href="#portfolio" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <a href="#portfolio" className="nav-text rounded-full px-3 py-1.5 transition hover:bg-slate-100">
               {t.nav.portfolio}
             </a>
             <a href="#contact" className="rounded-full bg-retro-accent px-4 py-1.5 text-sm font-semibold text-white transition hover:brightness-110">

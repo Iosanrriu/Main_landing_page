@@ -7,7 +7,6 @@ type FormData = {
   name: string;
   email: string;
   company: string;
-  projectType: string;
   message: string;
 };
 
@@ -15,7 +14,6 @@ const initialData: FormData = {
   name: '',
   email: '',
   company: '',
-  projectType: 'dataPipelines',
   message: ''
 };
 
@@ -115,24 +113,6 @@ export default function ContactForm() {
           onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
           className={inputStyles}
         />
-      </div>
-
-      <div>
-        <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="projectType">
-          {t.contact.form.projectType}
-        </label>
-        <select
-          id="projectType"
-          value={formData.projectType}
-          onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
-          className={inputStyles}
-        >
-          <option value="dataPipelines">{t.contact.form.projectOptions.dataPipelines}</option>
-          <option value="apis">{t.contact.form.projectOptions.apis}</option>
-          <option value="webapp">{t.contact.form.projectOptions.webapp}</option>
-          <option value="aiDataPrep">{t.contact.form.projectOptions.aiDataPrep}</option>
-          <option value="other">{t.contact.form.projectOptions.other}</option>
-        </select>
       </div>
 
       <div>
